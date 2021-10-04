@@ -1,5 +1,5 @@
 import os #Librería utilizada para limpiar pantalla.
-from random import randint  #Librería utilizada para obtener un número aleatorio.
+import random  #Librería utilizada para obtener un número aleatorio.
 from unidecode import unidecode #Librería para eliminar acentos.
 
 
@@ -8,8 +8,7 @@ def random_word():   #Función que toma una palabra aleatoria del archivo "data.
     with open("data.txt", "r", encoding="utf-8") as data:
         for line in data:
             words.append(line)
-    l = len(words)
-    word = words[randint(0,l-1)]
+    word = random.choice(words)
     return word
 
 
